@@ -5,11 +5,7 @@ class NodeList {
   }
 }
 
-function findCircularLinkedList(head) {
-  if (!head) {
-    return false;
-  }
-
+const isContainsCycle = (head) => {
   let slow = head;
   let fast = head;
 
@@ -21,9 +17,8 @@ function findCircularLinkedList(head) {
       return true;
     }
   }
-
   return false;
-}
+};
 
 let head = new NodeList(1);
 let second = new NodeList(2);
@@ -38,4 +33,4 @@ third.next = fourth;
 // Create cycle
 fourth.next = second;
 
-console.log(findCircularLinkedList(head)); // true
+console.log(isContainsCycle(head)); // true
